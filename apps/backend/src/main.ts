@@ -6,8 +6,16 @@
 import express from 'express';
 import cors from 'cors';
 
+import { User, sharedUtilFormat } from '@esoft7s/shared/util-format';
+
+const user: User = {
+  name: 'Hallison',
+  email: 'hallison@brancalhao.com.br',
+};
+console.log('user:', user);
+
 const app = express();
-app.use(cors())
+app.use(cors());
 
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to backend!' });

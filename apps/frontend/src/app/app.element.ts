@@ -1,12 +1,17 @@
 import './app.element.scss';
+import { sharedUtilFormat } from '@esoft7s/shared/util-format';
 
 export class AppElement extends HTMLElement {
   public static observedAttributes = [];
 
   connectedCallback() {
+    const lib = sharedUtilFormat();
+    console.log('AppElement : connectedCallback : lib:', lib);
     const title = 'frontend';
 
-    fetch('http://localhost:3333/api').then(response => response.json()).then(console.log)
+    fetch('http://localhost:3333/api')
+      .then((response) => response.json())
+      .then(console.log);
 
     this.innerHTML = `
     <div class="wrapper">
